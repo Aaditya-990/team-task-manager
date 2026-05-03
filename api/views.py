@@ -62,24 +62,20 @@ class TaskViewSet(viewsets.ModelViewSet):
         return [permission() for permission in permission_classes]
     
     def update(self, request, *args, **kwargs):
-        # Members can only update status if they are the assignee
         partial = kwargs.pop('partial', False)
         instance = self.get_object()
-        
+
         if request.user.role != 'ADMIN':
-            if instance.assignee != request.user:
-                return Response({"detail": "You do not have permission to edit this task."}, status=status.HTTP_403_FORBIDDEN)
-            
-            # If member, only allow updating status
-            data = {'status': request.data.get('status')}
+            # Members can only update the status field
             if 'status' not in request.data:
-                 return Response({"detail": "Members can only update task status."}, status=status.HTTP_400_BAD_REQUEST)
-            
+                return Response({"detail": "Members can only update task status."}, status=status.HTTP_400_BAD_REQUEST)
+
+            data = {'status': request.data.get('status')}
             serializer = self.get_serializer(instance, data=data, partial=True)
             serializer.is_valid(raise_exception=True)
             self.perform_update(serializer)
             return Response(serializer.data)
-            
+
         # Admin can update everything
         serializer = self.get_serializer(instance, data=request.data, partial=partial)
         serializer.is_valid(raise_exception=True)
