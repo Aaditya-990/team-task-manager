@@ -75,6 +75,6 @@ This repository is structured to be easily deployed on [Railway.app](https://rai
    - Add an environment variable: `VITE_API_URL` pointing to your deployed backend URL.
 
 ## Demo Video
-🎥 **[Click here to watch the demo](ADD_YOUR_VIDEO_LINK_HERE)**
+🎥 **[Click here to watch the demo](https://drive.google.com/file/d/1MEaPc1GpbVCE62U6iCoU0aHyArKwfz1S/view?usp=sharing)**
 
-> Record a 2-5 minute walkthrough showing: Signup, Admin creating projects/tasks, Member updating task status, and the Kanban board.
+> A 2-5 minute walkthrough showing: Signup, Admin creating projects/tasks, Member updating task status, and the Kanban board.

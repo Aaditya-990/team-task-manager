@@ -6,6 +6,9 @@
 LIVE DEMO URL:
   https://dependable-abundance-production.up.railway.app
 
+DEMO VIDEO:
+  https://drive.google.com/file/d/1MEaPc1GpbVCE62U6iCoU0aHyArKwfz1S/view?usp=sharing
+
 GITHUB REPOSITORY:
   https://github.com/Aaditya-990/team-task-manager
 
